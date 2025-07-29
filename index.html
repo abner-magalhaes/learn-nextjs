@@ -7,15 +7,20 @@
     <script type="text/jsx">
         const app = document.getElementById('app');
 
-        function Header() {
-            return <h1>Develop Preview Shop.</h1>
+        function Header({ title }) {
+            return <h1>{title}</h1>
         }
 
         function HomePage() {
+            const names = ['Abner Magalhães', 'Thalita Figueiredo', 'Marli de Oliveira'];
             return (
                 <div>
-                    {/* Nesting the Header component */}
-                    <Header />
+                    <Header title="Develop. Preview. Ship." />
+                    <ul>
+                        {names.map((name) => (
+                            <li key={name}>{name}</li>
+                        ))}
+                    </ul>
                 </div>
             );
         }
